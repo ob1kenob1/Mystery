@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-10">
+
+    <div class="playground">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="player1 player_info">
+              <app-player-info [player]="player1" ></app-player-info>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="board">
+
+            <app-board-row [cards]="player1Board"></app-board-row>
+            <app-board-row [cards]="player2Board"></app-board-row>
+            
+
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+            <div class="player2 player_info">
+              <app-player-info></app-player-info>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
