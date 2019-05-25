@@ -6,19 +6,21 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./board-row.component.less']
 })
 export class BoardRowComponent implements OnInit {
-  @Input() cards: {} = {
-    "cel1": "1",
-    "cel2": "2",
-    "cel3": "3",
-    "cel4": "4",
-    "cel5": "5"
+  @Input() public cards: any = {
+    'cel1': {
+      'img': 'assets/bob.gif'
+    },
+    "cel2": {},
+    "cel3": {},
+    "cel4": {},
+    "cel5": {}
   };
 
   constructor() { }
 
   ngOnInit() {
-
+    console.log(this.cards.cel1)
   }
-
+  
 
 }

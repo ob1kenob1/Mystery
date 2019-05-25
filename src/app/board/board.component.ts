@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   public player1Board: {} = {
-    "cel1": "test1",
+    "cel1": "assets/bob.gif",
     "cel2": "test2",
     "cel3": "test3",
     "cel4": "test4",
