@@ -1,0 +1,44 @@
+{
+  "cards": {
+    "card1": {
+      "url": "src/assets/bot.jpg",
+      "alt": "bot",
+      "desription": "simple bot",
+      "health": 25,
+      "attack": 5,
+      "cteature": true
+    },
+    "card2": {
+      "url": "src/assets/bot.jpg",
+      "alt": "bot",
+      "desription": "simple bot",
+      "health": 25,
+      "attack": 5,
+      "cteature": true
+    },
+    "card3": {
+      "url": "src/assets/bot.jpg",
+      "alt": "bot",
+      "desription": "simple bot",
+      "health": 25,
+      "attack": 5,
+      "cteature": true
+    },
+    "card4": {
+      "url": "src/assets/bot.jpg",
+      "alt": "bot",
+      "desription": "simple bot",
+      "health": 25,
+      "attack": 5,
+      "cteature": true
+    },
+    "card5": {
+      "url": "src/assets/bot.jpg",
+      "alt": "bot",
+      "desription": "simple bot",
+      "health": 25,
+      "attack": 5,
+      "cteature": true
+    }
+  }
+}

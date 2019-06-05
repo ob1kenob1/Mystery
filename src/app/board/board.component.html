@@ -12,16 +12,18 @@
       <div class="row">
         <div class="col-md-6">
 
-          <div class="board">
-<!-- 
-            <app-board-row [cards]="player1Board"></app-board-row>
-            <app-board-row [cards]="player2Board"></app-board-row>
-             -->
+          <app-battleground>
+            <ng-container
+              class="board"
+              *ngFor="let card of cardsMock">
+              <p>{{card.alt}}</p>
+              <!-- TODO make cards appear on battlegrond -->
+              <app-card
+                [card]="card">
+              </app-card>
+            </ng-container>
+          </app-battleground>
 
-             <app-card></app-card>
-
-          </div>
-          
         </div>
       </div>
 

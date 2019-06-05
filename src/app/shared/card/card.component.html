@@ -1,5 +1,9 @@
-<div class="card-container">
-  <img src="" alt="">
-  <div class="health"><i class="fas fa-heart"></i>{{ health }}</div>
-  <div class="attack"><i class="far fa-sword"></i>{{ attack }}</div>
+<div
+  class="card-container"
+  (click)="onCardClick()">
+  <img [src]="card.url" [alt]="card.alt">
+  <ng-container *ngIf="card.cteature">
+    <div class="health"><i class="fas fa-heart"></i>{{ card.health }}</div>
+    <div class="attack"><i class="far fa-sword"></i>{{ card.attack }}</div>
+  </ng-container>
 </div>

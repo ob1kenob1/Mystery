@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./player-info.component.less']
 })
 export class PlayerInfoComponent implements OnInit {
-  @Input() player: {} = {
+  @Input() player: any = {
     "playerName" : "test",
     "avatar": "../../assets/default.jpg"
   };
