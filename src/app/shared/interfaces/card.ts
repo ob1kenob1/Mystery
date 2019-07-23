@@ -1,8 +1,8 @@
 export interface Card {
   url: string;
   alt: string;
-  desription: string;
+  description: string;
   health: number;
   attack: number;
-  cteature: boolean;
+  creature: boolean;
 }

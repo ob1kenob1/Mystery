@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-      <div class="wrapper"></div>
+      <div class="wrapper">
+        <label *ngFor="let card of cards">
+          <app-card
+            [card]="card"
+          ></app-card>
+        </label>
+      </div>
     </div>
   </div>
 </div>

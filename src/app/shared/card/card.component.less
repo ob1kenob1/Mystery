@@ -1,12 +1,22 @@
-.card-container {
+.card {
     width: 100px;
     height: 120px;
     img {
         width: 100px;
         height: 100px;
     }
-    .health, .attack {
+
+    &__char {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         height: 20px;
-        
+        padding: 1px;
+
+        &__health,
+        &__attack {
+            height: 20px;
+        }
     }
+
 }
