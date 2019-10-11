@@ -10,10 +10,14 @@ import { LoaclStorageService } from 'src/app/shared/services/local-storage-servi
   styleUrls: ['./battleground.component.less']
 })
 export class BattlegroundComponent implements OnInit, OnChanges {
-  public player1Deck: Card[];
-  public player2Deck: Card[];
-  public emtyCard: Card = {
-    url: 'assets/emty.jpg',
+  public player1Board: Card[];
+  public player2Board: Card[];
+  // TODO: move players health to separate component with all players info; 
+  public player1Health: number = 50;
+  public player2Health: number = 50;
+  public emptyCard: Card = {
+    url: 'assets/empty.jpg',
+    health: 0
   };
 
   constructor(
@@ -22,60 +26,59 @@ export class BattlegroundComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    this.player1Deck = this.localStorageService.getCardsFromLocalStorage('player1Deck')
-      ? this.localStorageService.getCardsFromLocalStorage('player1Deck')
-      : player1CardsMock;
-    this.player2Deck = this.localStorageService.getCardsFromLocalStorage('player2Deck')
-      ? this.localStorageService.getCardsFromLocalStorage('player2Deck')
-      : player2CardsMock;
+    console.log(player1CardsMock);
+    console.log(this.player1Board);
+    
   }
 
-  ngOnChanges() {
-    // TODO: set and get cards values from local Storage;
-    this.player2Deck = this.localStorageService.getCardsFromLocalStorage('player2Deck')
-      ? this.localStorageService.getCardsFromLocalStorage('player2Deck')
-      : player2CardsMock;
-      console.log(this.localStorageService.getCardsFromLocalStorage('player2Deck'));
+  ngOnChanges(): void {
+    // TODO
+
+    
+  }
+
+  public setDefaultBattleground(): void {
+    // doesn`t work after fight begin...
+    this.player1Board = [];
+    this.player2Board = [];
+    this.player1Board = [ ...player1CardsMock ];
+    this.player2Board = [ ...player2CardsMock ];
+    this.cd.markForCheck;
+  }
+
+
+  public restart(): void {
+    this.setDefaultBattleground();
   }
 
   public startFight(): void {
-    this.fightAct(this.player1Deck, this.player2Deck);
-    this.updatePlayer2Deck();
-    // this.personalCards.forEach((card: Card) => {
-    //   console.log(card);
-    // });
-    // this.localStorageService.setCardsToLocalStorage()
   }
 
-  public restart(): void {
-    this.localStorageService.clearLocalStorage();
-    this.player1Deck = player1CardsMock;
-    this.player2Deck = player2CardsMock;
-  }
-
-  public fightAct(player1Deck: Card[], player2Deck: Card[]) {
-    // const personalaCardsAfterFight: Card[] = []; TODO
-    const player2CardsAfterFight = [];
+  public player1Attack(): void {
     for (let i = 0; i < 5; i++) {
-      if (player1Deck[i].attack) {
-        if (player2Deck[i] && player2Deck[i].health) {
-          const newHealth = player2Deck[i].health - player1Deck[i].attack;
-          if (newHealth <= 0) {
-            player2CardsAfterFight.push(this.emtyCard);
-          } else {
-            player2Deck[i].health = newHealth;
-            player2CardsAfterFight.push(player2Deck[i]);
-          }
-        } else {
-          console.log(`Enemy hergo got ${player1Deck[i].attack} damage`);
-        }
+      this.setEmptyCard(this.player2Board, i)
+      if (this.player2Board[i] === this.emptyCard && this.player1Board[i] !== this.emptyCard) {
+        this.player2Health = this.player2Health - this.player1Board[i].attack;
       }
-      this.localStorageService.setCardsToLocalStorage('player2Deck', player2CardsAfterFight);
+      this.player2Board[i].health = this.player2Board[i].health - this.player1Board[i].attack;
+      if (this.player2Board[i].health <= 0) {
+        this.player2Board[i] = this.emptyCard;
+      }
+    }
+    console.log(this.player2Board);
+    console.log(player2CardsMock);
+  }
+
+  // TODO the same as player 1 attack
+  // public player2Attack(): void {
+  //   for (let i = 0; i < 5)
+  // }
+
+  private setEmptyCard(board: Card[], index: number): void {
+    if (board[index].health <= 0) {
+      board[index] = this.emptyCard;
     }
   }
 
-  public updatePlayer2Deck(): void {
-    this.player2Deck = this.localStorageService.getCardsFromLocalStorage('player2Deck');
-  }
-
+ 
 }

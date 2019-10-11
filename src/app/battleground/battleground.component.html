@@ -3,7 +3,7 @@
     <div class="battleground">
       <div class="battleground-row__enemy">
         <div
-          *ngFor="let card of player2Deck"
+          *ngFor="let card of player2Board"
           class="battleground-row__card">
           <app-card [card]="card">
           </app-card>
@@ -11,7 +11,7 @@
       </div>
       <div class="battleground-row__personal">
         <div
-          *ngFor="let card of player1Deck"
+          *ngFor="let card of player1Board"
           class="battleground-row__card">
           <app-card
             [card]="card">
@@ -21,5 +21,14 @@
     </div>
   </div>
 </div>
-<button (click)="startFight()">fight!</button>
-<button (click)="restart()">restart</button>
+<div class="fight-controls d-flex justify-content-around">
+  <button (click)="player1Attack()">player 1 attack!</button>
+  <button (click)="restart()">restart</button>
+  <button (click)="player2Attack()">player 2 attack!</button>
+</div>
+
+<div class="players-health-bars d-flex justify-content-between">
+  <div class="player-1">{{ player1Health }}</div>
+  <button class="init-battleground" (click)="setDefaultBattleground()">set default board</button>
+  <div class="player-2">{{ player2Health }}</div>
+</div>

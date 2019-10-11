@@ -5,4 +5,5 @@ export interface Card {
   health?: number;
   attack?: number;
   creature?: boolean;
+  position?: number;
 }
