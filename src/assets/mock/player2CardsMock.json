@@ -1,0 +1,40 @@
+[{
+    "url": "assets/c3po.jpg",
+    "alt": "bot",
+    "description": "simple bot",
+    "attack": 5,
+    "creature": true
+  },
+  {
+    "url": "assets/c3po.jpg",
+    "alt": "bot",
+    "description": "simple bot",
+    "health": 20,
+    "attack": 5,
+    "creature": true
+  },
+  {
+    "url": "assets/c3po.jpg",
+    "alt": "bot",
+    "description": "simple bot",
+    "health": 25,
+    "attack": 5,
+    "creature": true
+  },
+  {
+    "url": "assets/c3po.jpg",
+    "alt": "bot",
+    "description": "simple bot",
+    "health": 6,
+    "attack": 5,
+    "creature": true
+  },
+  {
+    "url": "assets/c3po.jpg",
+    "alt": "bot",
+    "description": "simple bot",
+    "health": 18,
+    "attack": 5,
+    "creature": true
+  }
+]

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="battleground">
+      <div class="battleground-row__enemy">
+        <div
+          *ngFor="let card of player2Deck"
+          class="battleground-row__card">
+          <app-card [card]="card">
+          </app-card>
+        </div>
+      </div>
+      <div class="battleground-row__personal">
+        <div
+          *ngFor="let card of player1Deck"
+          class="battleground-row__card">
+          <app-card
+            [card]="card">
+          </app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button (click)="startFight()">fight!</button>
+<button (click)="restart()">restart</button>
