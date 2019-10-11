@@ -1,12 +1,20 @@
 .card-container {
+  width: 100px;
+  height: 120px;
+
+  img {
     width: 100px;
     height: 120px;
-    img {
-        width: 100px;
-        height: 100px;
-    }
-    .health, .attack {
-        height: 20px;
-        
-    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.emptyCard {
+  width: 100px !important;
+  height: 120px !important;
+  // opacity: 0;
 }
